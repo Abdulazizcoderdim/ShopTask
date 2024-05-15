@@ -6,11 +6,13 @@ const Header = () => {
   const [open, setOpen] = useState(
     JSON.parse(localStorage.getItem('is-open')) || false
   )
+  const [modal, setModal] = useState(false)
 
   const handleClick = ()=>{
     localStorage.setItem('is-open', !open)
     setOpen(!open)
   }
+
   return (
     <header>
       {open && <div className="bg-[#F3F5F7] relative w-full py-2 gap-5 flex items-center justify-center">
@@ -29,15 +31,22 @@ const Header = () => {
         </span>
       </div>
       }
-      <div className="container py-5 ">
+      <div className="md:container px-5 py-5 ">
         <div className="flex items-center justify-between">
          <div className='flex items-center gap-1'>
-            <span className='flex cursor-pointer md:hidden'><Menu className='w-[20px] h-[20px]' /></span>
+            <span onClick={()=>setModal(true)} className='relative flex cursor-pointer md:hidden'><Menu className='w-[20px] h-[20px]' /></span>
            <Link className='md:text-2xl text-base font-medium' to={'/'}>3legant.</Link>
          </div> 
          
          {/* Mobil Menu */}
-            
+            <div className='static'> 
+               <div className={`p-5 ${modal ? 'left-0' : '-left-[343px]'} md:hidden transition-all duration-300 absolute w-[343px] flex h-full bg-white z-[1002] inset-0 shadow-xl`}>
+                 <div className='flex w-full justify-between'>
+                  <Link to={'/'}>3legant.</Link>
+                  <span onClick={()=>setModal(false)} className='cursor-pointer h-5'><X/></span>
+                 </div>
+               </div>
+            </div>
          {/* Mobil Menu end */}
          
          <div className='md:flex hidden'>
