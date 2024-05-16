@@ -39,8 +39,8 @@ const Header = () => {
          </div> 
          
          {/* Mobil Menu */}
-            <div className='static'> 
-               <div className={`p-5 ${modal ? 'left-0' : '-left-[343px]'} md:hidden transition-all duration-300 absolute w-[343px] flex h-full bg-white z-[1002] inset-0 shadow-xl`}>
+            <div className='static md:hidden'> 
+               <div className={`p-5 ${modal ? 'left-0' : '-left-[343px]'} transition-all duration-300 absolute w-[343px] flex h-full bg-white z-[1002] inset-0 shadow-xl`}>
                  <div className='flex w-full justify-between'>
                   <Link to={'/'}>3legant.</Link>
                   <span onClick={()=>setModal(false)} className='cursor-pointer h-5'><X/></span>
