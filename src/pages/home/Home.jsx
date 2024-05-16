@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Slider from '../../components/slider/Slider'
-import { MoveRight } from 'lucide-react'
+import { ArrowRight  } from 'lucide-react'
 import Image1 from '../../../public/Image1.png'
 import Image2 from '../../../public/Imag2.png'
 import Image3 from '../../../public/Image33.png'
@@ -30,7 +30,7 @@ const Home = () => {
         <div className='relative md:w-[50%] w-full'>
           <div className='absolute top-10 left-10'>
              <p className='text-[34px] font-medium'>Living Room</p>
-             <Link className='text-base font-medium flex items-center gap-1 underline' to={'/shop'}>Shop Now <MoveRight/></Link>
+             <Link className='text-base font-medium flex items-center gap-1 underline' to={'/shop'}>Shop Now <ArrowRight /></Link>
           </div>
           <img className='md:h-[664px] w-full h-[377px]' src={Image1} alt="" />
         </div> 
@@ -38,20 +38,28 @@ const Home = () => {
           <div className='relative'>
             <div className='absolute bottom-10 left-10'> 
                <p className='text-[34px] font-medium'>Bedroom</p>
-               <Link className='text-base font-medium flex items-center gap-1 underline' to={'/shop'}>Shop Now <MoveRight/></Link>
+               <Link className='text-base font-medium flex items-center gap-1 underline' to={'/shop'}>Shop Now <ArrowRight /></Link>
             </div>
             <img className='w-full md:h-[319px] h-[180px]' src={Image2} alt="" /> 
           </div>
           <div className='relative'>
             <div className='absolute bottom-10 left-10'> 
                <p className='text-[34px] font-medium'>Kitchen</p>
-               <Link className='text-base font-medium flex items-center gap-1 underline' to={'/shop'}>Shop Now <MoveRight/></Link>
+               <Link className='text-base font-medium flex items-center gap-1 underline' to={'/shop'}>Shop Now <ArrowRight /></Link>
             </div>
             <img className='w-full md:h-[319px] h-[180px]' src={Image3} alt="" /> 
           </div>
         </div> 
       </div>
 
+      <div className='py-10 flex items-center justify-between'>
+          <h1 className='uppercase md:text-[40px] text-[34px] leading-[44px] font-medium'>New <br /> Arrivals</h1>
+          <p className='items-center md:flex hidden'>
+            <Link to={'/product'}>More Products</Link>
+            <span><ArrowRight /></span>
+          </p>
+      </div>
+ 
     </div>
   )
 }
